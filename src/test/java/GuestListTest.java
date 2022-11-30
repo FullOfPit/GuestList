@@ -66,6 +66,27 @@ class GuestListTest {
 
      }
 
+     @Test
+     void addedGuest_RewritesFile() throws IOException {
+          //Given
+          GuestList newGuestList = new GuestList();
+          ArrayList<String> guestList = new ArrayList<>();
+          guestList.add("Theodor");
+          guestList.add("Anette");
+          newGuestList.setGuests(guestList);
+
+          ArrayList<String> testList = new ArrayList<>();
+          testList.add("Theodor");
+          testList.add("Anette");
+          testList.add("Carlito");
+          //When
+          newGuestList.addGuest("Carlito");
+          ArrayList<String> actual = newGuestList.getGuests();
+          //Then
+          Assertions.assertEquals(testList, actual);
+
+     }
+
 
 
 

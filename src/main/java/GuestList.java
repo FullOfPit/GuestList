@@ -36,6 +36,14 @@ public class GuestList{
         }
         return null;
    }
+   public void addGuest(String guestToAdd) throws IOException {
+        if (this.guests == null) {
+            this.guests = new ArrayList<>();
+        }
+       this.guests.add(guestToAdd);
+       this.setGuests(this.guests);
+   }
+
 
 
    public boolean filePathExists(Path path) {
